@@ -4,8 +4,13 @@ main: nl.republicmc.kingdom.KingdomPlugin
 api-version: 1.17
 
 commands:
-  kingdom:
-    description: "Base command of Kingdom"
-    usage: /kingdom
-    aliases: [kd, k]
-    permission: republicmc.command.kingdom
+  guilds:
+    description: 'Manage guilds'
+    usage: '/guilds'
+    aliases: [guild, g]
+    permission: kingdom.guilds
+  economy:
+    description: 'Manage economy'
+    usage: '/economy'
+    aliases: [econ, eco, e]
+    permission: kingdom.economy

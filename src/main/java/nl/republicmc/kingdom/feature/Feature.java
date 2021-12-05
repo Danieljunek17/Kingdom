@@ -4,7 +4,7 @@ import nl.republicmc.kingdom.KingdomPlugin;
 
 public abstract class Feature {
 
-    private final KingdomPlugin plugin;
+    protected final KingdomPlugin plugin;
 
     public Feature(KingdomPlugin plugin) {
         this.plugin = plugin;
