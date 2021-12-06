@@ -1,7 +1,5 @@
 package nl.republicmc.kingdom.feature.economy;
 
-import nl.republicmc.kingdom.KingdomPlugin;
-
 public enum EconomyPermissions {
     WITHDRAW("economy.withdraw"),
     DEPOSIT("economy.deposit");
