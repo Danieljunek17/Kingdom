@@ -7,17 +7,17 @@ import java.util.UUID;
 
 public class Clan {
 
-    private List<UUID> guildMembers;
+    private List<UUID> clanMembers;
     private Vault vault;
 
 
     public Clan(List<UUID> guildMembers, int currencyAmount) {
-        this.guildMembers = guildMembers;
+        this.clanMembers = guildMembers;
         //TODO: add vault to guilds
     }
 
-    public List<UUID> getGuildMembers() {
-        return guildMembers;
+    public List<UUID> getClanMembers() {
+        return clanMembers;
     }
 
     public Vault getVault() {

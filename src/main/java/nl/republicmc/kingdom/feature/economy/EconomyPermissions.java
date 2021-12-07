@@ -3,8 +3,8 @@ package nl.republicmc.kingdom.feature.economy;
 import nl.republicmc.kingdom.feature.PermissionBase;
 
 public enum EconomyPermissions implements PermissionBase {
-    WITHDRAW("economy.withdraw.guild"),
-    DEPOSIT("economy.deposit.guild");
+    WITHDRAW("economy.withdraw"),
+    DEPOSIT("economy.deposit");
 
     private final String permission;
 

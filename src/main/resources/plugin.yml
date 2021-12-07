@@ -5,10 +5,10 @@ api-version: 1.17
 
 commands:
   guilds:
-    description: 'Manage guilds'
-    usage: '/guilds'
-    aliases: [clan, g]
-    permission: kingdom.guilds
+    description: 'Manage clans'
+    usage: '/clans'
+    aliases: [clan]
+    permission: kingdom.clans
   economy:
     description: 'Manage economy'
     usage: '/economy'

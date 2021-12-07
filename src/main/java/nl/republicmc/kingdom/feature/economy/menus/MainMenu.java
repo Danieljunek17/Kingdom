@@ -2,15 +2,16 @@ package nl.republicmc.kingdom.feature.economy.menus;
 
 import de.themoep.inventorygui.InventoryGui;
 import nl.republicmc.kingdom.KingdomPlugin;
+import nl.republicmc.kingdom.feature.Menu;
 import nl.republicmc.kingdom.utils.ChatUtil;
 import nl.republicmc.kingdom.utils.ItemUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-public class MainMenu {
+public final class MainMenu extends Menu {
 
     private final KingdomPlugin plugin;
-    InventoryGui gui;
+    private InventoryGui gui;
 
     private final String[] LAYOUT = {
         "         ",
@@ -22,7 +23,7 @@ public class MainMenu {
         this.plugin = plugin;
     }
 
-    public InventoryGui MainMenu() {
+    public InventoryGui getGui() {
         gui = new InventoryGui(plugin, ChatUtil.color("&cCOMMING SOON"), LAYOUT);
 
         gui.setFiller(ItemUtil.createItem(Material.GRAY_STAINED_GLASS_PANE, 1, true, 0, " "));
@@ -32,7 +33,9 @@ public class MainMenu {
         return gui;
     }
 
+    @Override
     public void show(Player player) {
-        this.gui.show(player);
+        getGui().show(player);
     }
+
 }

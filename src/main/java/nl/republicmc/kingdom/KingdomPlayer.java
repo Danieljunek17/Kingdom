@@ -16,10 +16,10 @@ public final class KingdomPlayer {
     private Clan clan;
     private Vault vault;
 
-    public KingdomPlayer(UUID id, String name, Clan guild, Vault vault) {
+    public KingdomPlayer(UUID id, String name, Clan clan, Vault vault) {
         this.id = id;
         this.name = name;
-        this.clan = guild;
+        this.clan = clan;
         this.vault = vault;
     }
 
@@ -35,12 +35,12 @@ public final class KingdomPlayer {
         return name;
     }
 
-    public Clan getGuild() {
+    public Clan getClan() {
         return clan;
     }
 
-    public void setGuild(Clan guild) {
-        this.clan = guild;
+    public void setClan(Clan clan) {
+        this.clan = clan;
     }
 
     public <P extends Enum<?> & PermissionBase> boolean hasPermission(P permission) {

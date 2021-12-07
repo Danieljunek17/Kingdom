@@ -10,20 +10,20 @@ import java.util.List;
 
 public final class ClanFeature extends Feature<ClanManager> implements CommandExecutor, TabCompleter {
 
-    private final PluginCommand guildCommand;
+    private final PluginCommand clanCommand;
 
     public ClanFeature(KingdomPlugin plugin, ClanManager manager) {
         super(plugin, manager);
 
-        this.guildCommand = plugin.getCommand("clan");
+        this.clanCommand = plugin.getCommand("clan");
     }
 
     @Override
     public void enable() {
         manager.enable();
 
-        guildCommand.setExecutor(this);
-        guildCommand.setTabCompleter(this);
+        clanCommand.setExecutor(this);
+        clanCommand.setTabCompleter(this);
     }
 
     @Override
@@ -39,7 +39,7 @@ public final class ClanFeature extends Feature<ClanManager> implements CommandEx
 
             SimpleCommandMap commandMap = (SimpleCommandMap) commandMapField.get(spm);
 
-            guildCommand.unregister(commandMap);
+            clanCommand.unregister(commandMap);
             commandMapField.setAccessible(accessible);
         } catch (ReflectiveOperationException e) {
             throw new IllegalStateException("Cannot unregister commands", e);
