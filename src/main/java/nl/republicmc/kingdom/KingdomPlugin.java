@@ -7,6 +7,7 @@ import nl.republicmc.kingdom.feature.maprestorer.MapRestorerFeature;
 import nl.republicmc.kingdom.feature.oregenerator.OreGeneratorFeature;
 import nl.republicmc.kingdom.feature.economy.EconomyFeature;
 import nl.republicmc.kingdom.feature.economy.EconomyManager;
+import nl.republicmc.kingdom.managers.PlayerManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.LinkedHashSet;
@@ -15,6 +16,7 @@ import java.util.Set;
 public final class KingdomPlugin extends JavaPlugin {
 
     private final Set<Feature<?>> features = new LinkedHashSet<>();
+    private PlayerManager playerManager;
 
     @Override
     public void onEnable() {
@@ -29,5 +31,9 @@ public final class KingdomPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         features.forEach(Feature::disable);
+    }
+
+    public PlayerManager getPlayerManager() {
+        return playerManager;
     }
 }
