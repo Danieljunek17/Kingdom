@@ -19,7 +19,7 @@ public class EconomyListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        plugin.getPlayerManager().addKDPlayer(new KingdomPlayer (player.getUniqueId(), player.getName(), null, null));
+        plugin.getPlayerManager().addPlayer(new KingdomPlayer (player.getUniqueId(), player.getName(), null, null));
     }
 
 }
