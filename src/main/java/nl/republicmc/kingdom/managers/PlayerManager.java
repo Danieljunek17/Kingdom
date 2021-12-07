@@ -1,18 +1,25 @@
 package nl.republicmc.kingdom.managers;
 
-import nl.republicmc.kingdom.feature.economy.managers.EconomyManager;
+import nl.republicmc.kingdom.KingdomPlayer;
 
+import java.util.Set;
 import java.util.UUID;
 
 public class PlayerManager {
 
-    private UUID uuid;
-    private String name;
-    private EconomyManager playerEco;
+    private Set<KingdomPlayer> kdPlayers;
 
-    PlayerManager(UUID uuid, String name, EconomyManager playerEco) {
-        this.uuid = uuid;
-        this.name = name;
-        this.playerEco = playerEco;
+    private KingdomPlayer kdPlayer;
+
+    PlayerManager(KingdomPlayer kdPlayer) {
+        this.kdPlayer = kdPlayer;
+    }
+
+    public void addKDPlayer(KingdomPlayer kdPlayer) {
+        this.kdPlayers.add(kdPlayer);
+    }
+
+    public boolean excists(UUID uuid) {
+        return kdPlayers.stream().anyMatch(player -> player.getId() == uuid);
     }
 }

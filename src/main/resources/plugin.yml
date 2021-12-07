@@ -7,7 +7,7 @@ commands:
   guilds:
     description: 'Manage guilds'
     usage: '/guilds'
-    aliases: [guild, g]
+    aliases: [clan, g]
     permission: kingdom.guilds
   economy:
     description: 'Manage economy'

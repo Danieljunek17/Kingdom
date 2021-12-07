@@ -1,17 +1,18 @@
 package nl.republicmc.kingdom.feature.economy;
 
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 public class Vault {
 
     private int currencyAmount;
-    private Map<UUID, EconomyPermissions> allowedPlayers;
+    private List<UUID> allowedPlayers;
+    private VaultType vaultType;
 
-    public Vault(int currencyAmount, Map<UUID, EconomyPermissions> allowedPlayers) {
+    public Vault(int currencyAmount, List<UUID> allowedPlayers, VaultType vaultType) {
         this.currencyAmount = currencyAmount;
         this.allowedPlayers = allowedPlayers;
+        this.vaultType = vaultType;
     }
 
     public int getCurrencyAmount() {
@@ -26,19 +27,23 @@ public class Vault {
         currencyAmount = currencyAmount + amount;
     }
 
-    public Map<UUID, EconomyPermissions> getAllowedPlayers() {
+    public List<UUID> getAllowedPlayers() {
         return allowedPlayers;
     }
 
-    public void addAllowedPlayer(UUID uuid, EconomyPermissions economyPermissions) {
-        allowedPlayers.put(uuid, economyPermissions);
+    public void addAllowedPlayer(UUID uuid) {
+        allowedPlayers.add(uuid);
     }
 
     public void removeAllowedPlayer(UUID uuid) {
         allowedPlayers.remove(uuid);
     }
 
-    public boolean isAllowedPlayer(UUID uuid, EconomyPermissions permission) {
-        return allowedPlayers.get(uuid).equals(permission);
+    public boolean isAllowedPlayer(UUID uuid) {
+        return allowedPlayers.contains(uuid);
+    }
+
+    public VaultType getVaultType() {
+        return vaultType;
     }
 }

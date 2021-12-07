@@ -1,8 +1,8 @@
 package nl.republicmc.kingdom;
 
 import nl.republicmc.kingdom.feature.Feature;
-import nl.republicmc.kingdom.feature.guild.GuildFeature;
-import nl.republicmc.kingdom.feature.guild.GuildManager;
+import nl.republicmc.kingdom.feature.clan.ClanFeature;
+import nl.republicmc.kingdom.feature.clan.ClanManager;
 import nl.republicmc.kingdom.feature.maprestorer.MapRestorerFeature;
 import nl.republicmc.kingdom.feature.oregenerator.OreGeneratorFeature;
 import nl.republicmc.kingdom.feature.economy.EconomyFeature;
@@ -18,7 +18,7 @@ public final class KingdomPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        features.add(new GuildFeature(this, new GuildManager(this)));
+        features.add(new ClanFeature(this, new ClanManager(this)));
         features.add(new EconomyFeature(this, new EconomyManager(this)));
         features.add(new MapRestorerFeature(this));
         features.add(new OreGeneratorFeature(this));

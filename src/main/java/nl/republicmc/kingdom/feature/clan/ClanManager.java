@@ -1,11 +1,11 @@
-package nl.republicmc.kingdom.feature.guild;
+package nl.republicmc.kingdom.feature.clan;
 
 import nl.republicmc.kingdom.KingdomPlugin;
 import nl.republicmc.kingdom.feature.Manager;
 
-public final class GuildManager extends Manager {
+public final class ClanManager extends Manager {
 
-    public GuildManager(KingdomPlugin plugin) {
+    public ClanManager(KingdomPlugin plugin) {
         super(plugin);
     }
 

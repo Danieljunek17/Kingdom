@@ -1,4 +1,4 @@
-package nl.republicmc.kingdom.feature.guild;
+package nl.republicmc.kingdom.feature.clan;
 
 import nl.republicmc.kingdom.KingdomPlugin;
 import nl.republicmc.kingdom.feature.Feature;
@@ -8,14 +8,14 @@ import org.bukkit.plugin.SimplePluginManager;
 import java.lang.reflect.Field;
 import java.util.List;
 
-public final class GuildFeature extends Feature<GuildManager> implements CommandExecutor, TabCompleter {
+public final class ClanFeature extends Feature<ClanManager> implements CommandExecutor, TabCompleter {
 
     private final PluginCommand guildCommand;
 
-    public GuildFeature(KingdomPlugin plugin, GuildManager manager) {
+    public ClanFeature(KingdomPlugin plugin, ClanManager manager) {
         super(plugin, manager);
 
-        this.guildCommand = plugin.getCommand("guild");
+        this.guildCommand = plugin.getCommand("clan");
     }
 
     @Override
