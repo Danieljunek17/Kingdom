@@ -10,9 +10,6 @@ import org.bukkit.entity.Player;
 
 public final class MainMenu extends Menu {
 
-    private final KingdomPlugin plugin;
-    private InventoryGui gui;
-
     private final String[] LAYOUT = {
         "         ",
         " a  a  a ",
@@ -20,7 +17,7 @@ public final class MainMenu extends Menu {
     };
 
     public MainMenu(KingdomPlugin plugin) {
-        this.plugin = plugin;
+        super(plugin);
     }
 
     public InventoryGui getGui() {
